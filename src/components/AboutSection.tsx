@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import portrait from "../assets/Portrait.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const metadata = [
-  { label: "Location", value: "Tokyo / Berlin" },
-  { label: "Gear", value: "Fujifilm X-T5" },
-  { label: "Style", value: "Raw / Ethereal" },
-  { label: "Active Since", value: "2019" }];
+  { label: "Location", value: "Jaipur / Noida" },
+  { label: "DOB", value: "19th January 2007" }];
 
 
   return (
@@ -32,7 +31,7 @@ const AboutSection = () => {
           
           <div className="aspect-[3/4] bg-muted overflow-hidden relative">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+              src={portrait}
               alt="Portrait"
               className="w-full h-full object-cover grayscale contrast-125" />
             

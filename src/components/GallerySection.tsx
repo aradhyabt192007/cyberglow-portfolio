@@ -1,6 +1,17 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import Sunkissed_Women from "../assets/Sunkissed_Women.JPG";
+import Heart_in_the_city from "../assets/Heart_in_the_city.JPG";
+import Abandoned_Royalty from "../assets/Abandoned_Royalty.JPG";
+import Flower_a_New_Hope from "../assets/Flower_a_New_Hope.JPG";
+import Flower_Empire_Strikes_Back from "../assets/Flower_Empire_Strikes_Back.JPG";
+import Dying_Majesty from "../assets/Dying_Majesty.JPG";
+import Flower_Return_of_the_Jedi from "../assets/Flower_Return_of_the_Jedi.JPG";
+import Sinners from "../assets/Sinners.JPG";
+import First_Rule from "../assets/1st_Rule_of_the_fight_club.JPG";
+import monotony from "../assets/monotony.JPG";
+import Acid from "../assets/Acid.JPG";
 
 interface Photo {
   id: number;
@@ -11,19 +22,20 @@ interface Photo {
 }
 
 const photos: Photo[] = [
-  { id: 1, src: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=800&q=80", category: "Street", title: "Neon Corridor", tall: true },
-  { id: 2, src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80", category: "Abstract", title: "Fractured Light" },
-  { id: 3, src: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80", category: "Urban", title: "Grid Collapse" },
-  { id: 4, src: "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?w=800&q=80", category: "Nature", title: "Silent Witness", tall: true },
-  { id: 5, src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80", category: "Nature", title: "Void Garden" },
-  { id: 6, src: "https://images.unsplash.com/photo-1519638399535-1b036603ac77?w=800&q=80", category: "Street", title: "After Hours" },
-  { id: 7, src: "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&q=80", category: "Portrait", title: "Hollow Gaze", tall: true },
-  { id: 8, src: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80", category: "Abstract", title: "Signal Decay" },
-  { id: 9, src: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80", category: "Urban", title: "Monolith" },
-  { id: 10, src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80", category: "Nature", title: "Threshold" },
+  { id: 1, src: Sunkissed_Women, category: "People", title: "Sunkissed Women", tall: true },
+  { id: 2, src: Heart_in_the_city, category: "Street", title: "Heart in the City", tall: true  },
+  { id: 3, src: Abandoned_Royalty, category: "Architecture", title: "Abandoned Royalty", tall: true  },
+  { id: 4, src: Flower_a_New_Hope, category: "Nature", title: "Flower a New Hope", tall: true},
+  { id: 5, src: Flower_Empire_Strikes_Back, category: "Nature", title: "Flower Empire Strikes Back", tall: true },
+  { id: 6, src: Flower_Return_of_the_Jedi, category: "Nature", title: "Flower Return of the Jedi", tall: true },
+  { id: 7, src: Dying_Majesty, category: "Architecture", title: "Dying Majesty", tall: true },
+  { id: 8, src: Sinners, category: "Street", title: "Sinners", tall: true },
+  { id: 9, src: First_Rule, category: "Street", title: "1st Rule of the Fight Club", tall: true },
+  { id: 10, src: monotony, category: "Street", title: "Monotony", tall: true },
+  { id: 11, src: Acid, category: "Trippy", title: "Acid", tall: true },
 ];
 
-const categories = ["All", "Street", "Portrait", "Abstract", "Urban", "Nature"];
+const categories = ["All", "Street", "People", "Trippy", "Architecture", "Nature"];
 
 const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
