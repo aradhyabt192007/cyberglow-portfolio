@@ -7,11 +7,11 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const metadata = [
-    { label: "Location", value: "Tokyo / Berlin" },
-    { label: "Gear", value: "Fujifilm X-T5" },
-    { label: "Style", value: "Raw / Ethereal" },
-    { label: "Active Since", value: "2019" },
-  ];
+  { label: "Location", value: "Tokyo / Berlin" },
+  { label: "Gear", value: "Fujifilm X-T5" },
+  { label: "Style", value: "Raw / Ethereal" },
+  { label: "Active Since", value: "2019" }];
+
 
   return (
     <section ref={ref} className="relative py-32 px-6 md:px-16 overflow-hidden">
@@ -28,14 +28,14 @@ const AboutSection = () => {
           initial={{ opacity: 0, x: -40 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="md:col-span-5 relative"
-        >
+          className="md:col-span-5 relative">
+          
           <div className="aspect-[3/4] bg-muted overflow-hidden relative">
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
               alt="Portrait"
-              className="w-full h-full object-cover grayscale contrast-125"
-            />
+              className="w-full h-full object-cover grayscale contrast-125" />
+            
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
           </div>
           {/* Corner marks */}
@@ -48,18 +48,31 @@ const AboutSection = () => {
           initial={{ opacity: 0, x: 40 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="md:col-span-7"
-        >
+          className="md:col-span-7">
+          
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-2 tracking-tight uppercase">
             About
           </h2>
           <div className="w-16 h-px bg-crimson mb-8" />
 
           <p className="font-mono text-sm leading-relaxed text-muted-foreground mb-8 max-w-lg">
-            I chase the tension between decay and beauty. My lens finds poetry in
-            crumbling infrastructure, neon-lit alleyways, and the quiet moments
-            between chaos. Every frame is a sigil — a mark left on the surface
-            of time.
+            I’m Aradhya Bhushan Thakur, a first-year Computer Science student with a strong interest in technology, creativity, and visual storytelling. Alongside my academic journey, I actively pursue photography and graphic design as a way to capture perspectives and bring ideas to life.
+I enjoy blending logic with creativity whether it’s through writing code or designing visuals that communicate meaning and emotion. As I continue to learn and grow, I aim to build projects that reflect both technical skill and artistic vision.
+
+
+
+
+
+
+
+
+
+
+
+      
+          
+
+
           </p>
 
           <p className="font-mono text-sm leading-relaxed text-muted-foreground mb-12 max-w-lg">
@@ -69,26 +82,16 @@ const AboutSection = () => {
 
           {/* Metadata grid */}
           <div className="grid grid-cols-2 gap-6">
-            {metadata.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 15 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-              >
+            {metadata.map((item, i) => <motion.div key={item.label} initial={{ opacity: 0, y: 15 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}>
+              
                 <span className="font-mono text-[10px] text-crimson tracking-[0.3em] uppercase block mb-1">
                   {item.label}
                 </span>
                 <span className="font-mono text-sm text-foreground">
                   {item.value}
                 </span>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </motion.div>
       </div>
-    </section>
-  );
-};
-
-export default AboutSection;
+    </section>);};export default AboutSection;
