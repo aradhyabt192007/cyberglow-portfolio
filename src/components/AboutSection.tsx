@@ -75,10 +75,10 @@ I enjoy blending logic with creativity whether it’s through writing code or de
 
           </p>
 
-          <p className="font-mono text-sm leading-relaxed text-muted-foreground mb-12 max-w-lg">
-            Based between cities, always in transit. The camera is both weapon
-            and sanctuary. I don't capture moments — I extract them.
-          </p>
+          
+
+
+          
 
           {/* Metadata grid */}
           <div className="grid grid-cols-2 gap-6">
